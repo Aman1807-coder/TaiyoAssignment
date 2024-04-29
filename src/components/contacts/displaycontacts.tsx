@@ -29,9 +29,9 @@ const DisplayContacts = () => {
                 className="bg-gray-200 m-5 p-5 w-96"
               >
                 <div className="flex-grow flex flex-col items-center">
-                  <h3>{element.firstName}</h3>
-                  <h3>{element.lastName}</h3>
-                  <p>{element.status}</p>
+                  <h3>{`First Name: ${element.firstName}`}</h3>
+                  <h3>{`Last Name: ${element.lastName}`}</h3>
+                  <p>{`Status: ${element.status}`}</p>
                 </div>
                 <div className="flex justify-between">
                   <button
