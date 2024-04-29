@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Contacts from "./components/contacts/createcontacts";
+import DisplayContacts from "./components/contacts/displaycontacts";
+import UpdateContacts from "./components/contacts/updatecontacts";
+import Chart from "./components/chartsandmaps/chart";
+import Sidebar from "./components/sidebar/sidebar";
+import Body from "./components/chartsandmaps/body";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex flex-row h-screen'>
+      
+      <BrowserRouter>
+      <Sidebar />
+        <Routes>
+          <Route path="/" element={<DisplayContacts />} />
+          <Route path="/adduser" element={<Contacts />} />
+          <Route path="/updateuser" element={<UpdateContacts />} />
+          <Route path="/covidgraph" element={<Chart />} />
+          <Route path="/map" element={<Body />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
